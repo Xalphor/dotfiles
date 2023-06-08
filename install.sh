@@ -34,6 +34,7 @@ setup_nvim() {
 
     echo "Configuring NeoVIM..."
 
+    mkdir -p ~/.config/nvim/
     ln -sf "$SCRIPT_DIR/init.vim" ~/.config/nvim/init.vim
 
 }
