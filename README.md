@@ -1,6 +1,9 @@
 # Dotfiles
 The place where I share my dotfiles.
 
+## Requirements
+1. [yarn](https://yarnpkg.com/)
+2. [node](https://nodejs.org/en)
 
 ## Install
 
