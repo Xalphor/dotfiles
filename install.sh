@@ -15,7 +15,27 @@ check_dependencies(){
 
     if ! command -v fzf &> /dev/null;
     then
-        missing_packages="fzf"
+        missing_packages="fzf "
+    fi
+
+    if ! command -v yarn &> /dev/null;
+    then
+        missing_packages="yarn "
+    fi
+
+    if ! command -v node &> /dev/null;
+    then
+        missing_packages="node "
+    fi
+
+    if ! command -v git &> /dev/null;
+    then
+        missing_packages="git "
+    fi
+
+    if ! command -v pip3 &> /dev/null;
+    then
+        missing_packages="pip3 "
     fi
 
     if [ ! -z $missing_packages ]
@@ -36,6 +56,11 @@ setup_nvim() {
 
     mkdir -p ~/.config/nvim/
     ln -sf "$SCRIPT_DIR/init.vim" ~/.config/nvim/init.vim
+    sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+    pip3 install neovim
+
 
 }
 
